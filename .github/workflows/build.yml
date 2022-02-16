@@ -1,0 +1,22 @@
+name: Build Armbian
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Packages
+        run: |
+          sudo apt update && sudo apt install -y build-essentials
+        
+      - name: Start Build
+        run: |
+          ./compile.sh
