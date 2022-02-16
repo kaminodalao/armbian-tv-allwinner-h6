@@ -15,7 +15,7 @@ jobs:
         
       - name: Start Build
         run: |
-          sudo ./compile.sh
+          ./compile.sh BOARD=allwinner-h6-tv
           tar -czvf armbian-tv-allwinner-h6.img.gz output/images/*.img
           
       - name: Upload Armbian image
