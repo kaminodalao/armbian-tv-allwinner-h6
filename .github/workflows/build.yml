@@ -15,7 +15,7 @@ jobs:
         
       - name: Start Build
         run: |
-          sudo -E ./compile.sh BUILD_MINIMAL=yes KERNEL_ONLY=no KERNEL_CONFIGURE=no BOARD=allwinner-h6-tv
+          sudo -E ./compile.sh BUILD_MINIMAL=yes KERNEL_ONLY=no KERNEL_CONFIGURE=no BOARD=allwinner-h6-tv RELEASE=focal BUILD_DESKTOP=no 
           tar -czvf armbian-tv-allwinner-h6.img.gz output/images/*.img
           
       - name: Upload Armbian image
