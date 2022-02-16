@@ -12,11 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
-      - name: Install Packages
-        run: |
-          sudo apt update && sudo apt install -y build-essential
         
       - name: Start Build
         run: |
           ./compile.sh
+          tar -czvf armbian-tv-allwinner-h6.img.gz output/images/*.img
+          
+      - name: Upload Armbian image
+        uses: actions/upload-artifact@master
+        with:
+          name: armbian-tv-allwinner-h6.img.gz
+          path: armbian-tv-allwinner-h6.img.gz
