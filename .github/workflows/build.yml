@@ -16,6 +16,6 @@ jobs:
       - name: Start Build
         run: |
           sudo apt update
-          sudo apt install -y pv build-essential m4 crossbuild-essential-armhf crossbuild-essential-arm64 openjdk-17-jdk libncurses5-dev libssl-dev zlib1g-dev gettext texinfo pkgconf flex mkbootimg libusb1.0-dev
+          sudo apt install -y pv build-essential m4 crossbuild-essential-armhf crossbuild-essential-arm64 openjdk-17-jdk libncurses5-dev libssl-dev zlib1g-dev gettext texinfo pkgconf flex mkbootimg libusb-1.0-0-dev libfdt-dev
           sudo -E ./compile.sh BUILD_MINIMAL=yes KERNEL_ONLY=no KERNEL_CONFIGURE=no BOARD=allwinner-h6-tv RELEASE=focal BUILD_DESKTOP=no 
           
